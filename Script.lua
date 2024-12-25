@@ -12,7 +12,6 @@ end
 
 function _G.Unload()
    Rayfield:Destroy()
-   Sense.Unload()
    Unloaded = true
 end
 
@@ -30,9 +29,9 @@ local Window = Rayfield:CreateWindow({
    },
 
    Discord = {
-      Enabled = false,
-      Invite = "noinvitelink",
-      RememberJoins = false
+      Enabled = true,
+      Invite = "https://discord.gg/kWyDGY8mrN",
+      RememberJoins = true
    }
 })
 
@@ -280,7 +279,6 @@ if game.GameId == 3808081382 then
             end
             if Rayfield.Flags.CFrameSpeed.CurrentValue == true then
                task.spawn(function()
-                  if ScriptVariables.AntiDeathCounter.Activated then return end
                   LocalPlayer.Character.HumanoidRootPart.CFrame = LocalPlayer.Character.HumanoidRootPart.CFrame + LocalPlayer.Character.Humanoid.MoveDirection * Rayfield.Flags.CFrameSpeedAmount.CurrentValue/100
                end)
             end
@@ -311,8 +309,26 @@ if game.GameId == 3808081382 then
                   end
                end)
             end
+            if Rayfield.Flags.ESPEnabled.CurrentValue == true then
+               task.spawn(function()
+                  for _,Plr in pairs(Players:GetPlayers()) do
+                     
+                  end
+               end)
+            end
 			end
       end)
+   end)
+else
+   Rayfield:Notify({
+      Title = "Game Not Supported!",
+      Content = "Closing Script",
+      Duration = 2.5,
+      Image = 0,
+   })
+   
+   task.delay(2.5, function()
+      Rayfield:Destroy()
    end)
 end
 
