@@ -26,12 +26,6 @@ local Window = Rayfield:CreateWindow({
       Enabled = true,
       FolderName = "Ba5tHubConfig",
       FileName = "Ba5t Hub"
-   },
-
-   Discord = {
-      Enabled = true,
-      Invite = "https://discord.gg/kWyDGY8mrN",
-      RememberJoins = true
    }
 })
 
