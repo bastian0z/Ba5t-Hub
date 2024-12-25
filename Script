@@ -16,16 +16,16 @@ function _G.Unload()
 end
 
 local Window = Rayfield:CreateWindow({
-   Name = "Ba5t Hub",
+   Name = "Bas Hub",
    Icon = 93934268503586,
-   LoadingTitle = "Loading Ba5t Hub",
-   LoadingSubtitle = "by Ba5t",
+   LoadingTitle = "Loading Bas Hub",
+   LoadingSubtitle = "by Bas",
    Theme = "Default",
 
    ConfigurationSaving = {
       Enabled = true,
-      FolderName = "Ba5tHubConfig",
-      FileName = "Ba5t Hub"
+      FolderName = "BasHubConfig",
+      FileName = "Bas Hub"
    },
 
    Discord = {
@@ -317,8 +317,7 @@ if game.GameId == 3808081382 then
                            if not Plr.Character:FindFirstChild("ESP") then
                               local ESP = Instance.new("Highlight")
                               ESP.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-                              --ESP.FillColor = Rayfield.Flags.ESPColor.CurrentValue
-                              print(game:GetService("HttpService"):JSONEncode(Rayfield.Flags.ESPColor))
+                              ESP.FillColor = Rayfield.Flags.ESPColor.Color
                               ESP.FillTransparency = Rayfield.Flags.ESPTransparency.CurrentValue
                               ESP.OutlineTransparency = 1
                               ESP.Parent = Plr.Character
