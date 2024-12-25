@@ -30,9 +30,9 @@ local Window = Rayfield:CreateWindow({
 
    Discord = {
       Enabled = false,
-      Invite = "",
-      RememberJoins = false
-   }
+      Invite = "" or "noinvitelink",
+      RememberJoins = true
+   },
 })
 
 if game.GameId == 3808081382 then
