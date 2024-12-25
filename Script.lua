@@ -312,7 +312,36 @@ if game.GameId == 3808081382 then
             if Rayfield.Flags.ESPEnabled.CurrentValue == true then
                task.spawn(function()
                   for _,Plr in pairs(Players:GetPlayers()) do
-                     
+                     if Plr ~= LocalPlayer then
+                        if Plr.Character then
+                           if not Plr.Character:FindFirstChild("ESP") then
+                              local ESP = Instance.new("Highlight")
+                              ESP.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                              ESP.FillColor = Rayfield.Flags.ESPColor.CurrentValue
+                              ESP.FillTransparency = Rayfield.Flags.ESPTransparency.CurrentValue
+                              ESP.OutlineTransparency = 1
+                              ESP.Parent = Plr.Character
+                           else
+                              local ESP = Plr.Character.ESP
+                              ESP.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                              ESP.FillColor = Rayfield.Flags.ESPColor.CurrentValue
+                              ESP.FillTransparency = Rayfield.Flags.ESPTransparency.CurrentValue
+                              ESP.OutlineTransparency = 1
+                           end
+                        end
+                     end
+                  end
+               end)
+            elseif Rayfield.Flags.ESPEnabled.CurrentValue == false then
+               task.spawn(function()
+                  for _,Plr in pairs(Players:GetPlayers()) do
+                     if Plr ~= LocalPlayer then
+                        if Plr.Character then
+                           if Plr.Character:FindFirstChild("ESP") then
+                              Plr.Characted.ESP:Destroy()
+                           end
+                        end
+                     end
                   end
                end)
             end
@@ -326,7 +355,7 @@ else
       Duration = 2.5,
       Image = 0,
    })
-   
+
    task.delay(2.5, function()
       Rayfield:Destroy()
    end)
