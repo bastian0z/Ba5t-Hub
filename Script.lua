@@ -317,7 +317,8 @@ if game.GameId == 3808081382 then
                            if not Plr.Character:FindFirstChild("ESP") then
                               local ESP = Instance.new("Highlight")
                               ESP.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-                              ESP.FillColor = Rayfield.Flags.ESPColor.CurrentValue
+                              --ESP.FillColor = Rayfield.Flags.ESPColor.CurrentValue
+                              print(game:GetService("HttpService"):JSONEncode(Rayfield.Flags.ESPColor))
                               ESP.FillTransparency = Rayfield.Flags.ESPTransparency.CurrentValue
                               ESP.OutlineTransparency = 1
                               ESP.Parent = Plr.Character
