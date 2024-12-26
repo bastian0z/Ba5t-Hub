@@ -328,7 +328,7 @@ if game.GameId == 3808081382 then
                            else
                               local ESP = ESPs:FindFirstChild(Plr.Name)
                               ESP.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-                              ESP.FillColor = Rayfield.Flags.ESPColor.CurrentValue
+                              ESP.FillColor = Rayfield.Flags.ESPColor.Color
                               ESP.FillTransparency = Rayfield.Flags.ESPTransparency.CurrentValue
                               ESP.OutlineTransparency = 1
                            end
